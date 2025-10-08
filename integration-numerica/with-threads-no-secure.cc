@@ -11,7 +11,7 @@ struct ThreadData {
 };
 
 void worker_thread(ThreadData *data) {
-  double h = 1.0 / 1000000000.0; // Asumimos n total para el cálculo de h
+  double h = 1.0 / 10000000.0; // Asumimos n total para el cálculo de h
   data->partial_sum = 0.0;
   for (long long i = data->start_iter; i < data->end_iter; ++i) {
     double x = (i + 0.5) * h;
