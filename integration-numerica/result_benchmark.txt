@@ -1,0 +1,112 @@
+==========================================
+  Iniciando Benchmark de Estimación de π
+==========================================
+Iteraciones fijas: 10000000
+Hilos a probar: 1 4 8 16 32
+
+--> Paso 1: Compilando archivos fuente...
+Compilando without-threads.cc...
+Compilando with-threads-no-secure.cc...
+Compilando with-threads-secure.cc...
+Compilando with-threads-mutex.cc...
+✅ Compilación finalizada.
+
+--> Paso 2: Ejecutando pruebas...
+
+================================================
+Probando ejecutable: without-threads
+================================================
+Ejecutando (versión secuencial, sin hilos):
+Comando: ./without-threads 10000000
+pi (secuencial) = 3.14159
+Tiempo: 0.0207909 segundos
+
+================================================
+Probando ejecutable: with-threads-no-secure
+================================================
+Ejecutando con 1 hilo(s):
+Comando: ./with-threads-no-secure 10000000 1
+pi (busy-waiting) = 3.14159
+Tiempo: 0.0207435 segundos
+
+Ejecutando con 4 hilo(s):
+Comando: ./with-threads-no-secure 10000000 4
+pi (busy-waiting) = 3.14159
+Tiempo: 0.00514513 segundos
+
+Ejecutando con 8 hilo(s):
+Comando: ./with-threads-no-secure 10000000 8
+pi (busy-waiting) = 3.14159
+Tiempo: 0.0029138 segundos
+
+Ejecutando con 16 hilo(s):
+Comando: ./with-threads-no-secure 10000000 16
+pi (busy-waiting) = 3.14159
+Tiempo: 0.0020574 segundos
+
+Ejecutando con 32 hilo(s):
+Comando: ./with-threads-no-secure 10000000 32
+pi (busy-waiting) = 3.14159
+Tiempo: 0.00241657 segundos
+
+================================================
+Probando ejecutable: with-threads-secure
+================================================
+Ejecutando con 1 hilo(s):
+Comando: ./with-threads-secure 10000000 1
+pi (busy-waiting con sección crítica) = 3.14159
+Tiempo: 0.0205744 segundos
+
+Ejecutando con 4 hilo(s):
+Comando: ./with-threads-secure 10000000 4
+pi (busy-waiting con sección crítica) = 3.14159
+Tiempo: 0.00534263 segundos
+
+Ejecutando con 8 hilo(s):
+Comando: ./with-threads-secure 10000000 8
+pi (busy-waiting con sección crítica) = 3.14159
+Tiempo: 0.00296626 segundos
+
+Ejecutando con 16 hilo(s):
+Comando: ./with-threads-secure 10000000 16
+pi (busy-waiting con sección crítica) = 3.14159
+Tiempo: 0.00278808 segundos
+
+Ejecutando con 32 hilo(s):
+Comando: ./with-threads-secure 10000000 32
+pi (busy-waiting con sección crítica) = 3.14159
+Tiempo: 0.00232585 segundos
+
+================================================
+Probando ejecutable: with-threads-mutex
+================================================
+Ejecutando con 1 hilo(s):
+Comando: ./with-threads-mutex 10000000 1
+pi (con mutex) = 3.14159
+Tiempo: 0.0204169 segundos
+
+Ejecutando con 4 hilo(s):
+Comando: ./with-threads-mutex 10000000 4
+pi (con mutex) = 3.14159
+Tiempo: 0.00534517 segundos
+
+Ejecutando con 8 hilo(s):
+Comando: ./with-threads-mutex 10000000 8
+pi (con mutex) = 3.14159
+Tiempo: 0.00288889 segundos
+
+Ejecutando con 16 hilo(s):
+Comando: ./with-threads-mutex 10000000 16
+pi (con mutex) = 3.14159
+Tiempo: 0.00293136 segundos
+
+Ejecutando con 32 hilo(s):
+Comando: ./with-threads-mutex 10000000 32
+pi (con mutex) = 3.14159
+Tiempo: 0.00212989 segundos
+
+==========================================
+  Benchmark finalizado.
+==========================================
+--> Paso 3: Limpiando ejecutables...
+✅ Limpieza finalizada.
